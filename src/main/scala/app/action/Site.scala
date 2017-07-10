@@ -1,12 +1,13 @@
 package app.action
 
 import akka.http.scaladsl.server.Directives._
+import akka.http.scaladsl.server.Route
 import app.model._
 import app.view.Index
 
 object Site {
 
-  val route =
+  val route: Route =
     pathSingleSlash {
       get {
         complete(toHtml(Index.page("main",0l)))
